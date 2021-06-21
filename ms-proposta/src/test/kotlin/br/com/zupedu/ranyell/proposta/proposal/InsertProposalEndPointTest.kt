@@ -1,49 +1,79 @@
 package br.com.zupedu.ranyell.proposta.proposal
 
-import br.com.zupedu.ranyell.proposta.InsertProposalRequest
-import br.com.zupedu.ranyell.proposta.InsertProposalServiceGrpc
+import br.com.zupedu.ranyell.proposta.*
+import br.com.zupedu.ranyell.proposta.shared.external.creditanalysis.CreditAnalysisFactory
 import io.grpc.ManagedChannel
 import io.grpc.Status
 import io.grpc.StatusRuntimeException
 import io.micronaut.context.annotation.Factory
+import io.micronaut.context.annotation.Replaces
 import io.micronaut.grpc.annotation.GrpcChannel
 import io.micronaut.grpc.server.GrpcServerChannel
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
+import org.mockito.Mockito.*
 import java.math.BigDecimal
+import java.util.stream.Stream
 import javax.inject.Singleton
 
 @MicronautTest(transactional = false)
 internal class InsertProposalEndPointTest(
     private val repository: ProposalRepository,
-    private val grpcClient: InsertProposalServiceGrpc.InsertProposalServiceBlockingStub
+    private val grpcClient: InsertProposalServiceGrpc.InsertProposalServiceBlockingStub,
+    private val grpcClientCreditAnalysis: CreditAnalysisServiceGrpc.CreditAnalysisServiceBlockingStub
 ) {
 
     /*
-    *  - Happy path -> ok
-    *  - Invalid data -> ok
-    *  - Duplicate proposal
+    *  - Happy path
+    *       * APPROVED      -> ok
+    *       * REFUSED       -> ok
+    *  - Invalid data       -> ok
+    *  - Duplicate proposal -> ok
     */
 
-    @AfterEach
-    internal fun tearDown() {
+    @BeforeEach
+    internal fun setUp() {
         repository.deleteAll()
     }
 
-    @Test
-    internal fun `should register a new proposal`() {
+    @ParameterizedTest
+    @MethodSource("proposalTestArguments")
+    internal fun `should register a new proposal`(document: String, status: String) {
         //setting
+        `when`(grpcClientCreditAnalysis.analyze(any())).thenReturn(
+            CreditAnalysisResponse
+                .newBuilder()
+                .setDocument(document)
+                .setName(insertProposalRequest(document).name)
+                .setProposalId(1L)
+                .setSolicitationResult(SolicitationResult.valueOf(status))
+                .build()
+        )
         //action
-        val response = grpcClient.insert(insertProposalRequest())
+        val response = grpcClient.insert(insertProposalRequest(document))
         //validation
         with(response) {
             assertNotNull(propostaId)
-            assertEquals(1L, propostaId)
             assertEquals(1, repository.count())
+            assertTrue(repository.existsByDocument(document))
         }
+        repository.findByDocument(document)?.let {
+            assertEquals(StatusProposal.valueOf(status), it.statusProposal)
+        }
+    }
+
+    companion object{
+        @JvmStatic
+        fun proposalTestArguments() = Stream.of(
+            Arguments.of("33926822090", "REFUSED"),
+            Arguments.of("84070202064","APPROVED")
+        )
     }
 
     @Test
@@ -60,13 +90,12 @@ internal class InsertProposalEndPointTest(
             assertEquals("invalid parameters", status.description)
             assertEquals(0, repository.count())
         }
-
     }
 
     @Test
     internal fun `not should register a new proposal when there is already a proposal with the document`() {
         //setting
-        val request = insertProposalRequest();
+        val request = insertProposalRequest("95451900000");
         repository.save(
             Proposal(
                 request.document,
@@ -89,9 +118,9 @@ internal class InsertProposalEndPointTest(
         }
     }
 
-    fun insertProposalRequest() = InsertProposalRequest.newBuilder()
+    private fun insertProposalRequest(document: String) = InsertProposalRequest.newBuilder()
         .setAddress("new address")
-        .setDocument("95451900000")
+        .setDocument(document)
         .setName("Bob Brown")
         .setSalary(2500.00)
         .setEmail("bob@email.com")
@@ -104,6 +133,14 @@ internal class InsertProposalEndPointTest(
                 : InsertProposalServiceGrpc.InsertProposalServiceBlockingStub? {
             return InsertProposalServiceGrpc.newBlockingStub(channel)
         }
+    }
+
+    @Factory
+    @Replaces(factory = CreditAnalysisFactory::class)
+    internal class MockitoStubFactory {
+        @Singleton
+        fun stubMock() =
+            mock(CreditAnalysisServiceGrpc.CreditAnalysisServiceBlockingStub::class.java)
     }
 
 }

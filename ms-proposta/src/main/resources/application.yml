@@ -14,3 +14,13 @@ jpa.default.properties.hibernate.hbm2ddl.auto: update
 address:
   client:
     url: ${ADDRESS_CLIENT_URL:`https://viacep.com.br/ws`}
+
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    credit-analysis:
+      address: ${ADDRESS_CREDIT_ANALYSIS:`localhost:50052`}
+      plaintext: true
+      max-retry-attempts: 5

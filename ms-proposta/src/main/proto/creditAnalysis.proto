@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zupedu.ranyell.proposta";
+option java_outer_classname = "CreditAnalysis";
+option objc_class_prefix = "HLW";
+
+package br.com.zupedu.ranyell.proposal;
+
+service CreditAnalysisService {
+  rpc analyze (CreditAnalysisRequest) returns (CreditAnalysisResponse) {}
+}
+
+enum SolicitationResult {
+  REFUSED = 0;
+  APPROVED = 1;
+}
+
+message CreditAnalysisRequest {
+  string document = 1;
+  string name = 2;
+  int64 proposalId = 4;
+}
+
+message CreditAnalysisResponse {
+  string document = 1;
+  string name = 2;
+  SolicitationResult solicitationResult = 3;
+  int64 proposalId = 4;
+}

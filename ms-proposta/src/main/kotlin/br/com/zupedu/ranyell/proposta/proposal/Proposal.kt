@@ -3,10 +3,7 @@ package br.com.zupedu.ranyell.proposta.proposal
 import br.com.zupedu.ranyell.proposta.shared.validation.Document
 import java.math.BigDecimal
 import java.time.LocalDateTime
-import javax.persistence.Embedded
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
+import javax.persistence.*
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
@@ -29,4 +26,11 @@ class Proposal(
     @GeneratedValue
     val id: Long? = null
     val createdAt: LocalDateTime = LocalDateTime.now()
+    @Enumerated(EnumType.STRING)
+    var statusProposal: StatusProposal? = null
+}
+
+enum class StatusProposal {
+    REFUSED,
+    APPROVED
 }
