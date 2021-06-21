@@ -45,6 +45,9 @@ dependencies {
     testImplementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-http-client")
     implementation("org.hibernate:hibernate-validator:6.2.0.Final")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation ("org.mockito:mockito-inline:3.10.0")
+    testImplementation("com.h2database:h2")
 
 }
 

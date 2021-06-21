@@ -1,27 +1,5 @@
 
-y
-Ims-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/Application.kt,3/c/3c2fb34f9bc3a0b0fdfea9842bf5f67debbfc894
-H
-ms-proposta/build.gradle,c/f/cfc717c5f5c495f06d63ca5f8f5bdf216dc9d409
-[
-+ms-proposta/src/main/proto/msProposta.proto,f/f/ff252976ee6d325a0958cf0c9429172bfc6bfbd9
 É
 Sms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/validation/Cep.kt,8/c/8c1ff02042a75e0a33dc6cb7a820472b30f07121
-ò
-hms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/ResourceNotFoundException.kt,4/3/43440581bc550753d2922519fa652e3171a86d6f
-ã
-[ms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/HandlerError.kt,b/c/bcec0132f7b49525897dd3ed2f34f887d8f17e71
-ü
-oms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/ResourceAlreadyExistingException.kt,3/3/33e47e8810cb3c9adadba9321e62686fba17a2b6
-á
-Wms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/integration/AddressClient.kt,e/d/ed109e633640ac9cb9d942471b0d1066ba90f0b0
 à
 Xms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/validation/Document.kt,5/e/5e9d518d9eb7e182e8b4afdb3cf6178a111f8fd6
-~
-Nms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/Address.kt,9/0/9095e61123fed6538f356fde0b8fec20de19b808
-è
-_ms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/InsertProposalExtensions.kt,1/6/1632b1a3acd0052524c8ac48a9c19ebbf60149ee
-â
-Yms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/ProposalRepository.kt,1/2/12af0a72c7df8bbed02b736def00efe3320717b0
-Ü
-Vms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/ProposalRequest.kt,e/6/e6038ac4d8cc12435e7f8fe18d5bb9e8cc08c396

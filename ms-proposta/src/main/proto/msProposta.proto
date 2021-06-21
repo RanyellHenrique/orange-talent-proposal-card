@@ -8,15 +8,15 @@ option objc_class_prefix = "HLW";
 package br.com.zupedu.ranyell.proposta;
 
 service InsertProposalService {
-  rpc cadastra (InsertProposalRequest) returns (InsertProposalResponse) {}
+  rpc insert (InsertProposalRequest) returns (InsertProposalResponse) {}
 }
 
 message InsertProposalRequest {
   string  document = 1;
   string email = 2;
   string name = 3;
-  string cep = 4;
-  string salary = 5;
+  string address = 4;
+  double salary = 5;
 }
 
 message InsertProposalResponse {

@@ -15,16 +15,15 @@ import javax.validation.constraints.PositiveOrZero
 @Entity
 class Proposal(
     @field:NotBlank @field:Document
-    val document: String?,
+    val document: String,
     @field:NotBlank @field:Email
-    val email: String?,
+    val email: String,
     @field:NotBlank
-    val name: String?,
-    @field:NotNull
-    @Embedded
-    val address: Address,
+    val name: String,
+    @field:NotBlank
+    val address: String,
     @field:NotNull @field:PositiveOrZero
-    val salary: BigDecimal?
+    val salary: BigDecimal
 ) {
     @Id
     @GeneratedValue

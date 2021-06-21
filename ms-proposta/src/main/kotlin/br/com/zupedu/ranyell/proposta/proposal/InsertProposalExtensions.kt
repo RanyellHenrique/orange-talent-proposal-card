@@ -8,7 +8,7 @@ fun InsertProposalRequest.toProposalRequest(): ProposalRequest {
         document = this.document,
         email = this.email,
         name = this.name,
-        cep = this.cep,
+        address = this.address,
         salary = BigDecimal(this.salary)
     )
 }

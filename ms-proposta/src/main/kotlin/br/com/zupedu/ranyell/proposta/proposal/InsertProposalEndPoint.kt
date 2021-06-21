@@ -17,8 +17,8 @@ class InsertProposalEndPoint(
 
     private val LOGGER = LoggerFactory.getLogger(this::class.java)
 
-    override fun cadastra(request: InsertProposalRequest, responseObserver: StreamObserver<InsertProposalResponse>) {
-        val proposal = insertProposalService.insert(request.toProposalRequest())
+    override fun insert(request: InsertProposalRequest?, responseObserver: StreamObserver<InsertProposalResponse>) {
+        val proposal = insertProposalService.insert(request!!.toProposalRequest())
         val response = InsertProposalResponse.newBuilder().setPropostaId(proposal.id!!).build()
         LOGGER.info("${proposal.name} customer proposal successfully registered")
         responseObserver.onNext(response)
