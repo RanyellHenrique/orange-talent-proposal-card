@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zupedu.ranyell.proposta";
+option java_outer_classname = "MsProposta";
+option objc_class_prefix = "HLW";
+
+package br.com.zupedu.ranyell.proposta;
+
+service InsertProposalService {
+  rpc cadastra (InsertProposalRequest) returns (InsertProposalResponse) {}
+}
+
+message InsertProposalRequest {
+  string  document = 1;
+  string email = 2;
+  string name = 3;
+  string cep = 4;
+  string salary = 5;
+}
+
+message InsertProposalResponse {
+  int64 propostaId = 1;
+}
+
