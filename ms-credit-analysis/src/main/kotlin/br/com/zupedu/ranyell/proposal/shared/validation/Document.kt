@@ -1,9 +1,12 @@
-package br.com.zupedu.ranyell.proposta.shared.validation
+package br.com.zupedu.ranyell.proposal.shared.validation
 
+import org.hibernate.validator.constraints.CompositionType.OR
+import org.hibernate.validator.constraints.ConstraintComposition
+import org.hibernate.validator.constraints.br.CNPJ
+import org.hibernate.validator.constraints.br.CPF
 import javax.validation.Constraint
 import javax.validation.Payload
 import javax.validation.ReportAsSingleViolation
-import javax.validation.constraints.Pattern
 import kotlin.annotation.AnnotationRetention.RUNTIME
 import kotlin.annotation.AnnotationTarget.*
 import kotlin.reflect.KClass
@@ -12,13 +15,12 @@ import kotlin.reflect.KClass
 @Retention(RUNTIME)
 @Constraint(validatedBy = [])
 @ReportAsSingleViolation
-@Pattern(
-    regexp = "^\\d{5}-?\\d{3}\$",
-    flags = [Pattern.Flag.CASE_INSENSITIVE]
-)
+@CPF
+@ConstraintComposition(OR)
+@CNPJ
 @Target(FIELD, CONSTRUCTOR, PROPERTY, VALUE_PARAMETER)
-annotation class Cep(
-    val message: String = "Não é um formato válido de cep",
+annotation class Document(
+    val message: String = "Não é um formato válido de documento",
     val groups: Array<KClass<Any>> = [],
     val payload: Array<KClass<Payload>> = []
 )

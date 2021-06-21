@@ -1,7 +1,6 @@
 package br.com.zupedu.ranyell.proposta.proposal
 
 
-import br.com.zupedu.ranyell.proposta.shared.validation.Cep
 import br.com.zupedu.ranyell.proposta.shared.validation.Document
 import io.micronaut.core.annotation.Introspected
 import java.math.BigDecimal

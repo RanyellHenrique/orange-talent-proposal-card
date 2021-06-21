@@ -1,3 +1,7 @@
 micronaut:
   application:
     name: creditAnalysis
+
+grpc:
+  server:
+    port: 50052
