@@ -1,6 +1,10 @@
 micronaut:
   application:
     name: msProposta
+  server:
+    port: ${SERVER_PORT_HTTP:8080}
+
+#Data base
 datasources:
   default:
     url: jdbc:postgresql://localhost:5432/db_proposta
@@ -11,10 +15,7 @@ datasources:
     dialect: POSTGRES
 jpa.default.properties.hibernate.hbm2ddl.auto: update
 
-address:
-  client:
-    url: ${ADDRESS_CLIENT_URL:`https://viacep.com.br/ws`}
-
+#Service Grpc external
 grpc:
   client:
     plaintext: true
@@ -24,3 +25,19 @@ grpc:
       address: ${ADDRESS_CREDIT_ANALYSIS:`localhost:50052`}
       plaintext: true
       max-retry-attempts: 5
+  server:
+    health:
+      enabled: true
+    port: ${SERVER_PORT_GRPC:50051}
+
+#Healthcheck
+endpoints:
+  all:
+    sensitive: false
+  health:
+    enable: true
+    sensitive: false
+    details-visible: ANONYMOUS
+
+
+

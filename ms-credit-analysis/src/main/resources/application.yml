@@ -1,7 +1,19 @@
 micronaut:
   application:
     name: creditAnalysis
+  server:
+    port: ${SERVER_PORT_HTTP:8082}
 
+#Service GRPC
 grpc:
   server:
-    port: 50052
+    port: ${SERVER_PORT:50052}
+
+#Healthcheck
+endpoints:
+  all:
+    sensitive: false
+  health:
+    enable: true
+    sensitive: false
+    details-visible: ANONYMOUS
