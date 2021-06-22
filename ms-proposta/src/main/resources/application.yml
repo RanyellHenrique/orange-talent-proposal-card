@@ -40,4 +40,10 @@ endpoints:
     details-visible: ANONYMOUS
 
 
+#Kafka
+kafka:
+  bootstrap:
+    servers: localhost:9092
+
+
 

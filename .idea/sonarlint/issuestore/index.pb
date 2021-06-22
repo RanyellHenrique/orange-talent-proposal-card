@@ -1,9 +1,6 @@
 
 à
 Xms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/validation/Document.kt,5/e/5e9d518d9eb7e182e8b4afdb3cf6178a111f8fd6
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 F
 ms-proposta/.gitignore,8/8/88627b0ac62ce22787b9f6af989e7c1ea483eadd
 è
@@ -50,8 +47,6 @@ ams-proposta/src/test/kotlin/br/com/zupedu/ranyell/proposta/proposal/InsertPropo
 Yms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/ProposalRepository.kt,1/2/12af0a72c7df8bbed02b736def00efe3320717b0
 
 Oms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/Proposal.kt,e/9/e96a652e07c5cd8ec7b68404c53dcc651b895bfe
-ç
-]ms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/InsertProposalEndPoint.kt,a/f/af5748126fd4b7f4a4ef87a634dcbe9a3773cd31
 ò
 hms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/ResourceNotFoundException.kt,4/3/43440581bc550753d2922519fa652e3171a86d6f
 ã

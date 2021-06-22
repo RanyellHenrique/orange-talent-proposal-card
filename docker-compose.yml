@@ -1,0 +1,54 @@
+version: '3'
+services:
+  db_proposta:
+    image: 'postgres:alpine'
+    container_name: db_proposta
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db_proposta
+      POSTGRES_HOST: postgres
+
+  db_account:
+    image: 'postgres:alpine'
+    container_name: db_account
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db_account
+      POSTGRES_HOST: postgres
+
+  zookeeper:
+    image: "confluentinc/cp-zookeeper:5.2.1"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_SYNC_LIMIT: 2
+
+  kafka:
+    image: "confluentinc/cp-kafka:5.2.1"
+    container_name: kafka
+    ports:
+      - 9092:9092
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+
+  contas:
+    image: 'zupacademy/contas'
+    ports:
+      - 8888:8888
+    environment:
+      SERVER_PORT: 8888
+      LOG_LEVEL: INFO
+      JAEGER_ENDPOINT: http://jaeger:14268/api/traces
