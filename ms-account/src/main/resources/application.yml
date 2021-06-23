@@ -20,8 +20,16 @@ grpc:
       enabled: true
     port: ${SERVER_PORT_GRPC:50053}
 
+
 #Kafka
-kafka.bootstrap.servers: localhost:9092
+kafka:
+  bootstrap:
+    servers: localhost:9092
+  embedded:
+    enabled: true
+    topic:
+      - card-create
+
 endpoints:
   all:
     enabled: true

@@ -41,12 +41,21 @@ dependencies {
     testImplementation("org.testcontainers:postgresql")
     testImplementation("org.testcontainers:testcontainers")
     implementation("io.micronaut:micronaut-validation")
-
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-
-    testImplementation("io.micronaut:micronaut-http-client")
     implementation("org.hibernate:hibernate-validator:6.2.0.Final")
 
+    //Test(mockito/h2/params)
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito:mockito-inline:3.10.0")
+    testImplementation("io.micronaut:micronaut-http-client")
+    testImplementation("com.h2database:h2")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.2")
+
+    //Kafka(micronaut/tests)
+    implementation("io.micronaut.kafka:micronaut-kafka")
+    testImplementation("org.apache.kafka:kafka-clients:2.8.0:test")
+    testImplementation("org.apache.kafka:kafka_2.12:2.8.0")
+    testImplementation("org.apache.kafka:kafka_2.12:2.8.0:test")
 
 }
 
