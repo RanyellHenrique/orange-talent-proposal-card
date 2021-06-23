@@ -28,6 +28,15 @@ internal class CreateCardEndPointTest(
     @Inject private val grpcClient: CreateCardServiceGrpc.CreateCardServiceBlockingStub,
     @Inject private val repository: CardRepository
 ) {
+    /*
+    *  - Happy path                 -> ok
+    *  - Duplicate proposalId       -> ok
+    *  - Invalid data:
+    *       * All invalid           -> ok
+    *       * Document invalid      -> ok
+    *       * ProposalId invalid    -> ok
+    *       * Name invalid          -> ok
+    */
 
     @BeforeEach
     internal fun setUp() {
@@ -106,10 +115,10 @@ internal class CreateCardEndPointTest(
     companion object {
         @JvmStatic
         fun createRequestArguments() = Stream.of(
-            Arguments.of("", null, ""), //All invalid
-            Arguments.of("0548853", 1L, "Bob Brown"), //Document invalid
+            Arguments.of("", null, ""),                     //All invalid
+            Arguments.of("0548853", 1L, "Bob Brown"),       //Document invalid
             Arguments.of("24405039089", null, "Bob Brown"), //ProposalId invalid
-            Arguments.of("24405039089", 1L, ""), //Name invalid
+            Arguments.of("24405039089", 1L, ""),            //Name invalid
         )
     }
 
@@ -122,6 +131,5 @@ internal class CreateCardEndPointTest(
             return CreateCardServiceGrpc.newBlockingStub(channel)
         }
     }
-
 
 }

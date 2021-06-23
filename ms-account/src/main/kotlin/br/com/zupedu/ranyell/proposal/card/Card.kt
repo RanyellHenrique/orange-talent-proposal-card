@@ -15,14 +15,21 @@ class Card(
     @field:NotNull
     val proposalId: Long,
     @field:NotBlank
+    @Column(unique = true)
     val number: String
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
     val createAt: LocalDateTime = LocalDateTime.now()
+
     @Enumerated(EnumType.STRING)
     var statusCard: StatusCard = StatusCard.UNLOCKED
+
+    fun blockCard(): String {
+        statusCard = StatusCard.BLOCKED
+        return statusCard.name
+    }
 }
 
 enum class StatusCard {

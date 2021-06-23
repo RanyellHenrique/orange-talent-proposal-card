@@ -11,6 +11,10 @@ service CreateCardService {
     rpc create (CreateCardRequest) returns (CreateCardResponse) {}
 }
 
+service BlockCardService {
+    rpc block (BlockCardRequest) returns (BlockCardResponse) {}
+}
+
 message CreateCardRequest {
     string document = 1;
     string name = 2;
@@ -18,5 +22,14 @@ message CreateCardRequest {
 }
 
 message CreateCardResponse {
+    string message = 1;
+}
+
+message BlockCardRequest {
+    string responsibleSystem = 1;
+    string cardNumber = 2;
+}
+
+message BlockCardResponse {
     string message = 1;
 }

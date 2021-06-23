@@ -54,8 +54,6 @@ Pms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/Application.k
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 w
 Gms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/card/Card.kt,4/e/4e8f864769406dbdd25a3867c1058f443af8d9d3
-W
-'ms-account/src/main/proto/account.proto,3/9/3944c94ec7c808d671d87e4de8078a1c0cca27e5
 ‡
 Wms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/shared/validation/Document.kt,8/0/802a30b367e6507062b66306824a6621fdbd6b2e
 B
