@@ -1,7 +1,7 @@
 package br.com.zupedu.ranyell.proposal.card.creation
 
 import br.com.zupedu.ranyell.proposal.card.Card
-import br.com.zupedu.ranyell.proposta.shared.validation.Document
+import br.com.zupedu.ranyell.proposal.shared.validation.Document
 import io.micronaut.core.annotation.Introspected
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull

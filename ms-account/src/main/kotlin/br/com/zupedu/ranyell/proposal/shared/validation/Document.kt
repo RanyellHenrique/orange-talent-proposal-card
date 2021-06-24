@@ -1,4 +1,4 @@
-package br.com.zupedu.ranyell.proposta.shared.validation
+package br.com.zupedu.ranyell.proposal.shared.validation
 
 import org.hibernate.validator.constraints.CompositionType.OR
 import org.hibernate.validator.constraints.ConstraintComposition

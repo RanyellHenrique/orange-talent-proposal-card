@@ -1,6 +1,6 @@
 package br.com.zupedu.ranyell.proposal.card
 
-import br.com.zupedu.ranyell.proposta.shared.validation.Document
+import br.com.zupedu.ranyell.proposal.shared.validation.Document
 import java.time.LocalDateTime
 import javax.persistence.*
 import javax.validation.constraints.NotBlank

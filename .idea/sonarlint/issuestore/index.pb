@@ -54,8 +54,6 @@ Pms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/Application.k
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 w
 Gms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/card/Card.kt,4/e/4e8f864769406dbdd25a3867c1058f443af8d9d3
-á
-Wms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/shared/validation/Document.kt,8/0/802a30b367e6507062b66306824a6621fdbd6b2e
 B
 docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
 å
@@ -68,8 +66,6 @@ Hms-account/src/test/kotlin/br/com/zupedu/ranyell/proposal/AccountTest.kt,7/1/7
 gms-credit-analysis/src/test/kotlin/br/com/zupedu/ranyell/proposal/analyse/CreditAnalysisEndPointTest.kt,3/3/3328d295a080e96f0f3bf49cae66048681a92bb3
 O
 ms-credit-analysis/build.gradle,8/0/80983a5d4660254fe81fc2a46223f3c18ab5c33b
-G
-ms-account/build.gradle,b/2/b270ab008c7d952983719a2236dd439ed2da9fed
 ç
 ]ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CreateCardProducer.kt,9/5/9555a21bc8cd3f983b804a3bce1b3583ab9b3758
 ç
@@ -84,8 +80,6 @@ Ums-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CreateC
 ^ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CardNumberGenerator.kt,4/1/41a59f7865e168df5044a5ad36b1f4f30fce39b9
 ë
 ams-proposta/src/test/kotlin/br/com/zupedu/ranyell/proposta/proposal/InsertProposalEndPointTest.kt,4/c/4c1fe5e580a3d913da0ab1318b50bfe36dcab8b8
-W
-'ms-account/src/main/proto/account.proto,3/9/3944c94ec7c808d671d87e4de8078a1c0cca27e5
 Ä
 Pms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/CardRepository.kt,b/c/bcd811ffcfcd38f1afa1c5f3318ae8c3d8f6596f
 ñ

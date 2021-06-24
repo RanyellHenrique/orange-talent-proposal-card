@@ -7,12 +7,18 @@ option objc_class_prefix = "HLW";
 
 package br.com.zupedu.ranyell.proposal;
 
+import "google/protobuf/timestamp.proto";
+
 service CreateCardService {
     rpc create (CreateCardRequest) returns (CreateCardResponse) {}
 }
 
 service BlockCardService {
     rpc block (BlockCardRequest) returns (BlockCardResponse) {}
+}
+
+service NotifyCardService {
+    rpc notify (NotifyCardRequest) returns (NotifyCardResponse) {}
 }
 
 message CreateCardRequest {
@@ -32,4 +38,14 @@ message BlockCardRequest {
 
 message BlockCardResponse {
     string message = 1;
+}
+
+message NotifyCardRequest {
+    string cardNumber = 1;
+    string destiny = 2;
+    google.protobuf.Timestamp validUntil = 3;
+}
+
+message NotifyCardResponse {
+    string result = 1;
 }
