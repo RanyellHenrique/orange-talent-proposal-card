@@ -80,8 +80,6 @@ Ums-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CreateC
 ^ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CardNumberGenerator.kt,4/1/41a59f7865e168df5044a5ad36b1f4f30fce39b9
 ‘
 ams-proposta/src/test/kotlin/br/com/zupedu/ranyell/proposta/proposal/InsertProposalEndPointTest.kt,4/c/4c1fe5e580a3d913da0ab1318b50bfe36dcab8b8
-€
-Pms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/CardRepository.kt,b/c/bcd811ffcfcd38f1afa1c5f3318ae8c3d8f6596f
 –
 fms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CreateCardRequestExtensions.kt,d/1/d10787c487eefbc8493fa6b4256d7bd75d288363
 Œ

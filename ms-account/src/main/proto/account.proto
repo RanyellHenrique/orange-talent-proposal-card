@@ -21,6 +21,10 @@ service NotifyCardService {
     rpc notify (NotifyCardRequest) returns (NotifyCardResponse) {}
 }
 
+service WalletCardService {
+    rpc associate(WalletCardRequest) returns (WalletCardResponse) {}
+}
+
 message CreateCardRequest {
     string document = 1;
     string name = 2;
@@ -48,4 +52,15 @@ message NotifyCardRequest {
 
 message NotifyCardResponse {
     string result = 1;
+}
+
+message WalletCardRequest {
+    string cardNumber = 1;
+    string email = 2;
+    string issuer = 3;
+}
+
+message WalletCardResponse {
+    string result = 1;
+    int64 id = 2;
 }

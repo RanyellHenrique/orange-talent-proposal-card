@@ -33,17 +33,24 @@ internal class NotifyCardEndPointTest(
     @Inject private val cardRepository: CardRepository
 ) {
 
+    /*
+    *  - Happy path                 -> ok
+    *  - Card not found             -> ok
+    *  - Invalid data:
+    *       * All invalid           -> ok
+    *       * Card invalid          -> ok
+    *       * System invalid        -> ok
+    *       * Destiny invalid       -> ok
+    *       * validUntil invalid    -> ok
+    */
+
     lateinit var card: Card
 
     @BeforeEach
     internal fun setUp() {
-        card = cardRepository.save(Card("10079428002", "Bob Brown", 1L, "1234123412341234"))
-    }
-
-    @AfterEach
-    internal fun tearDown() {
         repository.deleteAll()
         cardRepository.deleteAll()
+        card = cardRepository.save(Card("10079428002", "Bob Brown", 1L, "1234123412341234"))
     }
 
     @Test

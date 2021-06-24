@@ -1,5 +1,6 @@
 package br.com.zupedu.ranyell.proposal.card
 
+import br.com.zupedu.ranyell.proposal.card.wallet.Wallet
 import br.com.zupedu.ranyell.proposal.shared.validation.Document
 import java.time.LocalDateTime
 import javax.persistence.*

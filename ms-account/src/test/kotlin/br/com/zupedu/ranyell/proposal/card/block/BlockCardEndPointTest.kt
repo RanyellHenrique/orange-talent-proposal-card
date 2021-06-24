@@ -35,6 +35,7 @@ internal class BlockCardEndPointTest(
     /*
     *  - Happy path                 -> ok
     *  - Card already blocked       -> ok
+    *  - Card not found             -> ok
     *  - Invalid data:
     *       * All invalid           -> ok
     *       * Card invalid          -> ok
@@ -45,14 +46,10 @@ internal class BlockCardEndPointTest(
 
     @BeforeEach
     internal fun setUp() {
-        card = Card("77877779070", "Bob Brow", 1L, "1234456756789874")
-        cardRepository.save(card)
-    }
-
-    @AfterEach
-    internal fun tearDown() {
         repository.deleteAll()
         cardRepository.deleteAll()
+        card = Card("77877779070", "Bob Brow", 1L, "1234456756789874")
+        cardRepository.save(card)
     }
 
     @Test
