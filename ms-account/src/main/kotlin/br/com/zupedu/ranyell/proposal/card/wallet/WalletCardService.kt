@@ -18,7 +18,7 @@ class WalletCardService(
     fun associate(@Valid request: WalletRequest) = cardRepository.findByNumber(request.cardNumber)
         ?.let {
             if (repository.existsByIssuerAndCardNumber(request.issuer, it.number))
-                throw ResourceAlreadyExistingException("Card is already associated with the wallet ")
+                throw ResourceAlreadyExistingException("Card is already associated with the wallet")
             repository.save(request.toWallet(it))
         }
         ?: run { throw ResourceNotFoundException("Card not found") }
