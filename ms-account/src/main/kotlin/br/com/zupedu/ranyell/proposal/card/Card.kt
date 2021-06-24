@@ -26,9 +26,8 @@ class Card(
     @Enumerated(EnumType.STRING)
     var statusCard: StatusCard = StatusCard.UNLOCKED
 
-    fun blockCard(): String {
+    fun blockCard() {
         statusCard = StatusCard.BLOCKED
-        return statusCard.name
     }
 }
 

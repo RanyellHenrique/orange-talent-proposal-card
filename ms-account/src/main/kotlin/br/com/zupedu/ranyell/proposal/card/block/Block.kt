@@ -19,4 +19,9 @@ class Block(
     val id: Long? = null
     val blockedIn: LocalDateTime = LocalDateTime.now()
     var active: Boolean = true
+
+    @PrePersist
+    fun blockCard() {
+        card.blockCard()
+    }
 }
