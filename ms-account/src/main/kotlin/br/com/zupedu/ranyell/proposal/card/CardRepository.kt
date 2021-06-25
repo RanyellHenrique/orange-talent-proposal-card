@@ -9,4 +9,5 @@ interface CardRepository : JpaRepository<Card, Long> {
     fun existsByProposalId(proposalId: Long): Boolean
     fun findByNumber(number: String): Card?
     fun findByProposalId(proposalId: Long): Card?
+    fun existsByDocument(document: String): Boolean
 }

@@ -13,6 +13,7 @@ import javax.validation.constraints.NotNull
 @Entity
 class Card(
     @field:NotBlank @field:Document
+    @Column(unique = true)
     val document: String,
     @field:NotBlank
     val name: String,

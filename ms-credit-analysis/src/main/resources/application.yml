@@ -8,6 +8,14 @@ micronaut:
 grpc:
   server:
     port: ${SERVER_PORT:50052}
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    account:
+      address: ${ADDRESS_ACCOUNT:`localhost:50053`}
+      plaintext: true
+      max-retry-attempts: 5
 
 #Healthcheck
 endpoints:

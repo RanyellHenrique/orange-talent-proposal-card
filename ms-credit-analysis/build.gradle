@@ -15,7 +15,6 @@ repositories {
 }
 
 micronaut {
-    runtime("netty")
     testRuntime("junit5")
     processing {
         incremental(true)
@@ -39,6 +38,13 @@ dependencies {
     testImplementation("io.micronaut:micronaut-http-client")
     implementation("org.hibernate:hibernate-validator:6.2.0.Final")
     implementation("io.micronaut:micronaut-management")
+
+    //Test(mockito/h2/params)
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito:mockito-inline:3.10.0")
+    testImplementation("io.micronaut:micronaut-http-client")
+    testImplementation("com.h2database:h2")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.2")
 
 }
 

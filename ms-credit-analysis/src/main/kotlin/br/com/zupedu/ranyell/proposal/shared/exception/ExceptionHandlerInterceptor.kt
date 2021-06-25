@@ -25,6 +25,7 @@ class ExceptionHandlerInterceptor : MethodInterceptor<Any, Any> {
         } catch (e: Exception) {
             val status = when (e) {
                 is ConstraintViolationException -> handleConstraintViolationException(e)
+                is StatusRuntimeException -> StatusRuntimeException(e.status)
                 else -> Status.UNKNOWN.withDescription("An unexpected error happened").asRuntimeException()
             }
             val responseObserver = context.parameterValues[1] as StreamObserver<*>
@@ -49,7 +50,6 @@ class ExceptionHandlerInterceptor : MethodInterceptor<Any, Any> {
             .build()
 
         LOGGER.info("statusProto: $statusProto")
-        val error = StatusProto.toStatusRuntimeException(statusProto)
-        return error
+        return StatusProto.toStatusRuntimeException(statusProto)
     }
 }

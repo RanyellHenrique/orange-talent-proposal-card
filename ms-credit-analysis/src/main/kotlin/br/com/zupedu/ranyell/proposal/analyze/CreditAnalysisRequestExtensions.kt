@@ -1,4 +1,4 @@
-package br.com.zupedu.ranyell.proposal.analyse
+package br.com.zupedu.ranyell.proposal.analyze
 
 import br.com.zupedu.ranyell.proposal.CreditAnalysisRequest
 

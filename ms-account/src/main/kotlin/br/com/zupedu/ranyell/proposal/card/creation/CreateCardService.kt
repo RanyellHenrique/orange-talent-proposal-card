@@ -19,6 +19,8 @@ class CreateCardService(
         .also {
             if (repository.existsByProposalId(it.proposalId))
                 throw  ResourceAlreadyExistingException("this proposal already has a card")
+            if(repository.existsByDocument(it.document))
+                throw  ResourceAlreadyExistingException("there is already a card for this document")
         }
         .run { repository.save(this) }
         .also { producer.send(it.proposalId, CardProducerResponse(it)) }

@@ -1,13 +1,13 @@
-package br.com.zupedu.ranyell.proposal.analyse
+package br.com.zupedu.ranyell.proposal.analyze
 
-import br.com.zupedu.ranyell.proposal.CreditAnalysisRequest
-import br.com.zupedu.ranyell.proposal.CreditAnalysisServiceGrpc
-import br.com.zupedu.ranyell.proposal.SolicitationResult
+import br.com.zupedu.ranyell.proposal.*
 import br.com.zupedu.ranyell.proposal.SolicitationResult.*
+import br.com.zupedu.ranyell.proposal.external.AccountGrpcFactory
 import io.grpc.ManagedChannel
 import io.grpc.Status
 import io.grpc.StatusRuntimeException
 import io.micronaut.context.annotation.Factory
+import io.micronaut.context.annotation.Replaces
 import io.micronaut.grpc.annotation.GrpcChannel
 import io.micronaut.grpc.server.GrpcServerChannel
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
@@ -16,13 +16,24 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import org.mockito.Mockito
+import org.mockito.Mockito.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @MicronautTest
 internal class CreditAnalysisEndPointTest(
-    @Inject private val grpcClient: CreditAnalysisServiceGrpc.CreditAnalysisServiceBlockingStub
+    @Inject private val grpcClient: CreditAnalysisServiceGrpc.CreditAnalysisServiceBlockingStub,
+    @Inject private val accountGrpcClient: CreateCardServiceGrpc.CreateCardServiceBlockingStub
 ) {
+
+    /*
+    *  - Happy path (digit != 3)    -> ok
+    *  - Happy path (digit = 3)     -> ok
+    *  - Invalid data:
+    *       * All invalid           -> ok
+    */
+
 
     lateinit var DOCUMENT_APPROVED: String
     lateinit var DOCUMENT_REFUSED: String
@@ -36,6 +47,11 @@ internal class CreditAnalysisEndPointTest(
     @Test
     internal fun `should return an analyze approved when the document starts with a digit other than 3`() {
         //setting
+        `when`(accountGrpcClient.create(any())).thenReturn(
+            CreateCardResponse.newBuilder()
+                .setMessage("Card in process of creation")
+                .build()
+        )
         val request = creditAnalysisRequest(DOCUMENT_APPROVED)
         //action
         val response = grpcClient.analyze(request)
@@ -88,5 +104,13 @@ internal class CreditAnalysisEndPointTest(
             return CreditAnalysisServiceGrpc.newBlockingStub(channel)
         }
     }
+
+    @Factory
+    @Replaces(factory = AccountGrpcFactory::class)
+    internal class MockitoStubFactory {
+        @Singleton
+        fun stubMock() = mock(CreateCardServiceGrpc.CreateCardServiceBlockingStub::class.java)
+    }
+
 
 }

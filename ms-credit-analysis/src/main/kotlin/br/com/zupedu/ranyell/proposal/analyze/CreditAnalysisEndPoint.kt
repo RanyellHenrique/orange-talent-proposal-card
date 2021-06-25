@@ -1,4 +1,4 @@
-package br.com.zupedu.ranyell.proposal.analyse
+package br.com.zupedu.ranyell.proposal.analyze
 
 import br.com.zupedu.ranyell.proposal.CreditAnalysisRequest
 import br.com.zupedu.ranyell.proposal.CreditAnalysisResponse
@@ -15,7 +15,7 @@ class CreditAnalysisEndPoint(
 ) : CreditAnalysisServiceGrpc.CreditAnalysisServiceImplBase() {
 
     override fun analyze(request: CreditAnalysisRequest?, responseObserver: StreamObserver<CreditAnalysisResponse>?) {
-        val response = creditService.analize(request!!.toAnalysisRequest())
+        val response = creditService.analyze(request!!.toAnalysisRequest())
         responseObserver!!.onNext(response)
         responseObserver.onCompleted()
     }

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zupedu.ranyell.proposal";
+option java_outer_classname = "Account";
+option objc_class_prefix = "HLW";
+
+package br.com.zupedu.ranyell.proposal;
+
+import "google/protobuf/timestamp.proto";
+
+service CreateCardService {
+    rpc create (CreateCardRequest) returns (CreateCardResponse) {}
+}
+
+message CreateCardRequest {
+    string document = 1;
+    string name = 2;
+    int64 proposalId = 3;
+}
+
+message CreateCardResponse {
+    string message = 1;
+}

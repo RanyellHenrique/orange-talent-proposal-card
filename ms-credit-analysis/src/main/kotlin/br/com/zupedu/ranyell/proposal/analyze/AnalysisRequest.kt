@@ -1,5 +1,6 @@
-package br.com.zupedu.ranyell.proposal.analyse
+package br.com.zupedu.ranyell.proposal.analyze
 
+import br.com.zupedu.ranyell.proposal.CreateCardRequest
 import br.com.zupedu.ranyell.proposal.CreditAnalysisResponse
 import br.com.zupedu.ranyell.proposal.SolicitationResult
 import br.com.zupedu.ranyell.proposal.shared.validation.Document
@@ -24,5 +25,11 @@ data class AnalysisRequest(
             .setSolicitationResult(result)
             .build()
     }
+
+    fun toCreateCardRequest() = CreateCardRequest.newBuilder()
+        .setDocument(document)
+        .setName(name)
+        .setProposalId(proposalId)
+        .build()
 }
 

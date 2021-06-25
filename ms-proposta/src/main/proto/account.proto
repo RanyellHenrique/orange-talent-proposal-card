@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zupedu.ranyell.proposal";
+option java_outer_classname = "Account";
+option objc_class_prefix = "HLW";
+
+package br.com.zupedu.ranyell.proposal;
+
+import "google/protobuf/timestamp.proto";
+
+service CreateCardService {
+    rpc create (CreateCardRequest) returns (CreateCardResponse) {}
+}
+
+service BlockCardService {
+    rpc block (BlockCardRequest) returns (BlockCardResponse) {}
+}
+
+service NotifyCardService {
+    rpc notify (NotifyCardRequest) returns (NotifyCardResponse) {}
+}
+
+service WalletCardService {
+    rpc associate(WalletCardRequest) returns (WalletCardResponse) {}
+}
+
+service FindCardByProposal {
+    rpc find(FindCardByProposalRequest) returns (FindCardByProposalResponse) {}
+}
+
+
+message CreateCardRequest {
+    string document = 1;
+    string name = 2;
+    int64 proposalId = 3;
+}
+
+message CreateCardResponse {
+    string message = 1;
+}
+
+message BlockCardRequest {
+    string responsibleSystem = 1;
+    string cardNumber = 2;
+}
+
+message BlockCardResponse {
+    string message = 1;
+}
+
+message NotifyCardRequest {
+    string cardNumber = 1;
+    string destiny = 2;
+    google.protobuf.Timestamp validUntil = 3;
+}
+
+message NotifyCardResponse {
+    string result = 1;
+}
+
+message WalletCardRequest {
+    string cardNumber = 1;
+    string email = 2;
+    string issuer = 3;
+}
+
+message WalletCardResponse {
+    string result = 1;
+    int64 id = 2;
+}
+
+
+message FindCardByProposalRequest {
+    int64 proposalId = 1;
+}
+
+message FindCardByProposalResponse {
+    string cardNumber = 1;
+    google.protobuf.Timestamp createAt = 2;
+    string name = 3;
+    int64 proposalId = 4;
+    repeated BlockCard blockades = 5;
+    repeated NotifyCard notifications = 6;
+    repeated WalletCard wallets = 7;
+
+}
+
+message BlockCard {
+    int64 id = 1;
+    string responsibleSystem = 2;
+    google.protobuf.Timestamp blockedIn = 3;
+    bool active = 4;
+}
+
+message NotifyCard {
+    google.protobuf.Timestamp validUntil = 1;
+    string destiny = 2;
+}
+
+message WalletCard {
+    int64 id = 1;
+    string email = 2;
+    google.protobuf.Timestamp createAt = 3;
+    string issuer = 4;
+}

@@ -7,18 +7,6 @@ F
 _ms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/shared/validation/Document.kt,0/5/05c628322617fe671affc271800ec06d094424a5
 í
 bms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/shared/exception/HandlerError.kt,8/5/85a4697adaae8c932bba799e2a261e7115a8af6f
-f
-6ms-credit-analysis/src/main/proto/creditAnalysis.proto,a/7/a7636a7cf8fe1be87ee000c78d17dcf4e846e711
-°
-qms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/shared/exception/ExceptionHandlerInterceptor.kt,0/d/0dcabbb9ee736254797d2f99f760c14706994412
-ú
-lms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/analyse/CreditAnalysisRequestExtensions.kt,c/d/cd6ba34ac014555a3e9cc45e37eed4a9fcb7d7c6
-í
-bms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/analyse/CreditAnalysisService.kt,7/5/759afecc44d873ab1e1ab7b705f9ce17fcf6f0e7
-ì
-cms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/analyse/CreditAnalysisEndPoint.kt,8/d/8d23571f7bba265e0c4e10ca97db95b559798938
-å
-\ms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/analyse/AnalysisRequest.kt,1/1/11afa2213f3608a6ccd4345a2c444d8dfa1c6fca
 _
 /ms-proposta/src/main/proto/creditAnalysis.proto,a/9/a99f5229f0a2c12ada961b6776584e2066ac50fe
 [
@@ -45,8 +33,6 @@ hms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/Res
 [ms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/HandlerError.kt,b/c/bcec0132f7b49525897dd3ed2f34f887d8f17e71
 y
 Ims-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/Application.kt,3/c/3c2fb34f9bc3a0b0fdfea9842bf5f67debbfc894
-Ä
-Pms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/Application.kt,b/3/b3eea45e46e0a2aa2c8e8718a9ced3ebe5ef406c
 ç
 ]ms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/InsertProposalEndPoint.kt,a/f/af5748126fd4b7f4a4ef87a634dcbe9a3773cd31
 :
@@ -64,12 +50,8 @@ x
 Hms-account/src/test/kotlin/br/com/zupedu/ranyell/proposal/AccountTest.kt,7/1/71d1a562fd850923df45a1bd7cb12147d6cee2da
 ó
 gms-credit-analysis/src/test/kotlin/br/com/zupedu/ranyell/proposal/analyse/CreditAnalysisEndPointTest.kt,3/3/3328d295a080e96f0f3bf49cae66048681a92bb3
-O
-ms-credit-analysis/build.gradle,8/0/80983a5d4660254fe81fc2a46223f3c18ab5c33b
 ç
 ]ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CreateCardProducer.kt,9/5/9555a21bc8cd3f983b804a3bce1b3583ab9b3758
-ç
-]ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CreateCardEndPoint.kt,8/9/897386a313dfcba9d219cf223552b1c465a38320
 ä
 Zms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/shared/exception/HandlerError.kt,c/c/ccebea01761b708290a25dc4cdc274b6d0856ab2
 û
@@ -96,8 +78,6 @@ Wms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/shared/validation/Doc
 Yms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/block/BlockCardEndPoint.kt,e/b/ebe229fb4b2d5aa85817fa9cf9c1dbde8eeeb7ad
 à
 Xms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/block/BlockCardService.kt,e/0/e0af08b15464fda9e0edf87534b9034cb29840fb
-G
-ms-account/build.gradle,b/2/b270ab008c7d952983719a2236dd439ed2da9fed
 Ü
 Vms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/notify/NotifyRequest.kt,1/7/17df85e85a9f2ee09096ad764ddb35634e8e63a0
 â
@@ -124,5 +104,3 @@ Yms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/wallet/WalletRep
 [ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/wallet/WalletCardEndPoint.kt,7/c/7c454049ca1423ca6c3394dedee6b6dee391098d
 ä
 Zms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/wallet/WalletCardService.kt,b/7/b7810718c7b1a237c6568065502d199f870ba663
-è
-_ms-account/src/test/kotlin/br/com/zupedu/ranyell/proposal/card/wallet/WalletCardEndPointTest.kt,a/c/ac05d7b73c3ff226669ae60721b3efb4feac5d57
