@@ -10,6 +10,8 @@ import javax.validation.constraints.NotNull
 class Card(
     @field:NotBlank
     val number: String,
+    @field:NotBlank
+    val name: String,
     @field:NotNull
     val createAt: LocalDateTime,
     @field:NotNull

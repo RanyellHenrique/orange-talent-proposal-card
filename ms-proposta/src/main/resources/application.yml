@@ -44,6 +44,10 @@ endpoints:
 kafka:
   bootstrap:
     servers: localhost:9092
+  embedded:
+    enabled: true
+    topic:
+      - card-create
 
 
 
