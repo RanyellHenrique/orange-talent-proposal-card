@@ -14,3 +14,17 @@ jpa:
         hbm2ddl:
           auto: update
         show_sql: true
+
+#Kafka
+kafka:
+  bootstrap:
+    servers: localhost:${random.port}
+  embedded:
+    enabled: true
+    topic:
+      - card-create
+
+endpoints:
+  all:
+    enabled: true
+    sensitive: false

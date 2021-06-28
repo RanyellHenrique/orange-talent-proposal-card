@@ -19,8 +19,6 @@ kms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/external/cred
 rms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/external/creditanalysis/CreditAnalysisFactory.kt,f/c/fc84d50055530b6b9a45f33047e317eed210d14f
 â
 Yms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/ProposalRepository.kt,1/2/12af0a72c7df8bbed02b736def00efe3320717b0
-
-Oms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/proposal/Proposal.kt,e/9/e96a652e07c5cd8ec7b68404c53dcc651b895bfe
 ò
 hms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/ResourceNotFoundException.kt,4/3/43440581bc550753d2922519fa652e3171a86d6f
 ã
@@ -30,8 +28,6 @@ hms-proposta/src/main/kotlin/br/com/zupedu/ranyell/proposta/shared/exception/Res
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 B
 docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
-H
-ms-proposta/build.gradle,c/f/cfc717c5f5c495f06d63ca5f8f5bdf216dc9d409
 x
 Hms-account/src/test/kotlin/br/com/zupedu/ranyell/proposal/AccountTest.kt,7/1/71d1a562fd850923df45a1bd7cb12147d6cee2da
 ä
@@ -122,8 +118,6 @@ lms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/analyze/Credi
 cms-credit-analysis/src/main/kotlin/br/com/zupedu/ranyell/proposal/analyze/CreditAnalysisEndPoint.kt,d/8/d8a5cb3e27312848bf305775ddfdae9221861690
 O
 ms-credit-analysis/build.gradle,8/0/80983a5d4660254fe81fc2a46223f3c18ab5c33b
-G
-ms-account/build.gradle,b/2/b270ab008c7d952983719a2236dd439ed2da9fed
 è
 _ms-account/src/test/kotlin/br/com/zupedu/ranyell/proposal/card/wallet/WalletCardEndPointTest.kt,a/c/ac05d7b73c3ff226669ae60721b3efb4feac5d57
 ó
@@ -134,8 +128,6 @@ X
 (ms-proposta/src/main/proto/account.proto,e/b/ebea72fb00e595136abed9defba51ba3be055bc1
 [
 +ms-proposta/src/main/proto/msProposta.proto,f/f/ff252976ee6d325a0958cf0c9429172bfc6bfbd9
-ç
-]ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CreateCardProducer.kt,9/5/9555a21bc8cd3f983b804a3bce1b3583ab9b3758
 é
 ^ms-account/src/main/kotlin/br/com/zupedu/ranyell/proposal/card/creation/CardNumberGenerator.kt,4/1/41a59f7865e168df5044a5ad36b1f4f30fce39b9
 Ö
